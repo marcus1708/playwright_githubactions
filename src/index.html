@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Curso de Cypress + Github Actions</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="title">Projeto CI - Github Actions</h1>
+      <p id="subtitle">Projeto voltado para CI no Github</p>
+      <br />
+    </div>
+    <span class="success">
+      <strong>Mensagem enviada com sucesso.</strong>
+    </span>
+    <span class="error">
+      <strong>Há campos obrigatórios não preenchidos !</strong>
+    </span>
+    <div id="white-background">
+      <form>
+        <fieldset class="group">
+          <div class="field">
+            <label for="Name"><strong>Nome</strong><span class="required-mark"> (obrigatório)</span></label>
+            <input type="text" name="Name" id="Name" required />
+          </div>
+          <div class="field">
+            <label for="Job"><strong>Profissão</strong><span class="required-mark"> (obrigatório)</span></label>
+            <input type="text" name="Job" id="Job" required />
+          </div>
+        </fieldset>
+        <fieldset class="group">
+          <div class="field">
+            <label for="email"><strong>E-mail</strong><span class="email-label-span required-mark"> (obrigatório)</span></label>
+            <input type="email" name="email" id="email"  />
+          </div>
+          <div class="field">
+            <label for="phone"><strong>Telefone</strong><span class="phone-label-span required-mark"> (obrigatório)</span></label>
+            <input type="number" name="phone" id="phone" />
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="product"><strong>Produto</strong></label>
+          <select id="product">
+            <option selected disabled value="">Selecione</option>
+            <option value="carro">Carro</option>
+            <option value="mercado">Mercado</option>
+            <option value="empresa">Empresa</option>
+            <option value="aeroporto">Aeroporto</option>
+          </select>
+        </div>
+        <div id="support-type" class="field">
+          <label><strong>Área de atuação</strong></label>
+          <label>
+            <input type="radio" name="area" value="rh" checked />RH
+          </label>
+          <label>
+            <input type="radio" name="area" value="diretoria" />Diretoria
+          </label>
+          <label>
+            <input type="radio" name="area" value="operador" />Operador
+          </label>
+        </div>
+        <fieldset class="group">
+          <div id="check">
+            <label><strong>Contato preferencial?</strong></label>
+            <br />
+            <input type="checkbox" id="email-checkbox" name="email" value="email" />
+            <label for="email-checkbox">E-mail</label>
+            <input type="checkbox" id="phone-checkbox" name="phone" value="phone" />
+            <label for="phone-checkbox">Telefone</label>
+            
+          </div>
+        </fieldset>
+        <div class="field">
+          <br />
+          <label for="open-text-area"><strong>Deixe aqui seu comentário <br /></strong><span class="required-mark"> (obrigatório)</span></label>
+          <textarea row="6" id="text-area" name="open-text-area" required></textarea>
+        </div>
+        <div class="field">
+          <label for="file-upload"><strong>Adicionar um anexo</strong></label>
+          <input id="file-upload" type="file">
+        </div>
+        <button type="submit" class="button">Enviar</button>
+        <div id="privacy">
+          <a href="privacy.html" target="_blank">Política de Privacidade</a>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
