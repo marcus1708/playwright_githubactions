@@ -57,7 +57,7 @@ import { expect } from '@playwright/test';
     await this.inputNome.fill(nome);
     await this.inputEmail.fill(email);
     await this.inputSenha.fill(senha);
-    await this.adm.click();
+    await this.adm.check();
     await this.btnCadastrar.click();
   }
 
