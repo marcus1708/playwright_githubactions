@@ -7,13 +7,13 @@ class Login {
   /**
    * @param {import('@playwright/test').Page} page
    */
-  constructor(page) {
+   constructor(page) {
     this.page = page;
-
-    this.inputEmail = this.page.getByPlaceholder(/email/i);
-    this.inputSenha = this.page.getByPlaceholder(/senha/i);
-    this.btnLogin = this.page.getByRole('button', { name: 'Entrar' });
-    this.alertError = this.page.getByRole('alert');
+    this.inputEmail = page.getByPlaceholder(/email/i);
+    this.inputSenha = page.getByPlaceholder(/senha/i);
+    this.btnLogin = page.getByRole('button', { name: /entrar/i });
+    this.alertError = page.getByRole('alert');
+    this.menuAdmin = page.getByText(/bem vindo/i); // elemento da home
   }
 
   async goto() {
@@ -26,17 +26,14 @@ class Login {
     await this.btnLogin.click();
   }
 
-  async Verif_Msg_Erro(msgEsperada) {
-    await expect(this.alertError).toBeVisible();
-    await expect(this.alertError).toHaveText(msgEsperada);
-  }
-
-  async Verif_Pag_Login() {
-    await expect(this.page).toHaveURL(/\/login/);
-  }
-
-  async Verif_Home() {
+  async Verif_Login_Sucesso() {
+    await expect(this.page).not.toHaveURL(/\/login/);
     await expect(this.page).toHaveURL(/\/admin\/home/);
+  }
+
+  async Verif_Login_Erro(msg) {
+    await expect(this.alertError).toBeVisible();
+    await expect(this.alertError).toHaveText(msg);
   }
 }
 
